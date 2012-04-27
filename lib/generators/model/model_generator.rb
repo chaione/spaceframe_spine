@@ -3,6 +3,10 @@ module SpaceFrame
     class ModelGenerator < SpaceFrame::Generators::NamedBase
       source_root File.expand_path('templates', File.dirname(__FILE__))
 
+      desc "Generate a Spine model with configured fields"
+
+      argument :fields, :desc => 'List of model attributes', :type => :array, :banner => 'field1 field2'
+
       attr_reader   :model_name
 
       def initialize(*args)
