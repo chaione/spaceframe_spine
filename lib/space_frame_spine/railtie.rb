@@ -6,7 +6,7 @@ module SpaceFrame
         require 'generators/base_generator'
         require 'generators/named_base_generator'
         require 'generators/new/new_generator'
-        require 'generators/scaffold/scaffold_generator'
+        require 'generators/section/section_generator'
       end
 
     end

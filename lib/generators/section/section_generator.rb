@@ -1,6 +1,6 @@
 module SpaceFrame
   module Generators
-    class ScaffoldGenerator < SpaceFrame::Generators::NamedBase
+    class SectionGenerator < SpaceFrame::Generators::NamedBase
       source_root File.expand_path('templates', File.dirname(__FILE__))
 
       attr_reader   :controller_name,
@@ -20,7 +20,7 @@ module SpaceFrame
         @model_name = singular_table_name
       end
 
-      def scaffold_resource
+      def generate_section
         directory "app", "app/assets/javascripts/app"
         #process other templates
       end
