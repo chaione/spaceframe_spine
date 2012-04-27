@@ -1,8 +1,22 @@
 App.<%= @controller_name.camelize %>.Index.Item = class Item extends Spine.Controller
 
+  className: "<%= @model_name %> item list-item"
+
+  events:
+    "click" : "clicked"
+
   constructor: ->
     super
 
   render: ->
     @html JST["app/views/<%= @view_name %>/index/item"](@item)
     @
+
+  select: ->
+    @$.addClass("selected")
+
+  deselect: ->
+    @$.removeClass("selected")
+    
+  clicked: =>
+    @item.select()
