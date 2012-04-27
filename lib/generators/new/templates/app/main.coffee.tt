@@ -1,0 +1,15 @@
+App.Main = class Main extends Spine.Controller
+
+  constructor: ->
+    super
+
+    @sections = []
+
+    @manager = new Spine.Manager(@sections...)
+
+    @routes
+
+
+  render: ->
+    @append section.render().el for section in @sections
+    @
