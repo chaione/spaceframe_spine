@@ -12,3 +12,4 @@ window.<%= @model_name.camelize %> = class <%= @model_name.camelize %> extends S
 
   @selected: ->
     @select (item) -> item.selected is true
+    
