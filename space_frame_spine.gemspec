@@ -14,4 +14,5 @@ Gem::Specification.new do |gem|
   gem.name          = "space_frame_spine"
   gem.require_paths = ["lib"]
   gem.version       = SpaceFrame::Spine::VERSION
+
 end
