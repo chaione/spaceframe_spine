@@ -1,3 +1,3 @@
 window.<%= @model_name.camelize %> = class <%= @model_name.camelize %> extends Spine.Model
-  @configure "<%= @model_name.camelize %>", "title", "body"
+  @configure "<%= @model_name.camelize %>", <%= fields.map {|f| %Q{"#{f}"} }.join(', ') %>
   @extend Spine.Model.Ajax
