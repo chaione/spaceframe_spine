@@ -1,0 +1,2 @@
+# Application class namespace
+window.App = {}
