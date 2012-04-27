@@ -19,9 +19,5 @@ App.<%= @controller_name.camelize %>.Index.Item = class Item extends Spine.Contr
     @$.removeClass("selected")
     
   clicked: =>
-<<<<<<< Updated upstream
-    @item.select()
-=======
     @item.select()
     @navigate "/<%= @controller_name %>/#{@item.id}"
->>>>>>> Stashed changes
