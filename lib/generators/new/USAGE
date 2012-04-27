@@ -1,0 +1,13 @@
+Description:
+    Generates the basic application structure for a spine app and places it in app/assets/javascripts/app.
+
+Example:
+    rails generate spaceframe_new
+
+    This will create:
+        app/assets/javascripts/app/
+        app/assets/javascripts/app/app.coffee
+        app/assets/javascripts/app/main.coffee
+        app/assets/javascripts/app/models/
+        app/assets/javascripts/app/controllers/
+        app/assets/javascripts/app/views/
