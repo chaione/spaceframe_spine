@@ -4,4 +4,5 @@ App.<%= @controller_name.camelize %>.Index.Detail = class Detail extends Spine.C
     super
 
   render: ->
+    @html JST["app/views/<%= @view_name %>/index/detail"](@item)
     @

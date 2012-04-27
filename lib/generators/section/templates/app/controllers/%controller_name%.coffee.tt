@@ -8,6 +8,10 @@ App.<%= @controller_name.camelize %>.Section = class <%= @controller_name.cameli
       index: App.<%= @controller_name.camelize %>.Index.Main
     super
 
+  routes:
+    "/<%= @controller_name %>/:id": "index"
+    "/<%= @controller_name %>"    : "index"
+
   render: ->
     @index.render()
     @

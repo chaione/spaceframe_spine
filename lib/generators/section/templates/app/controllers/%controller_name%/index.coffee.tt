@@ -16,7 +16,15 @@ App.<%= @controller_name.camelize %>.Index.Main = class Main extends Spine.Contr
   render: ->
     @html JST['app/views/layouts/section']()
     @list   = new @listClass(el: @listEl).render()
-    @detail = new @detailClass(el: @detailEl).render()
     @
 
+  activate: (params) =>
+    super
+    @show params if params.id
 
+  show: (params) ->
+    if item = <%= @model_name.camelize %>.exists(params.id)
+      @detail = new @detailClass(el: @detailEl).render(item)
+    else
+      <%= @model_name.camelize %>.one "refresh", =>
+        @show(params)
