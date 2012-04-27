@@ -1,7 +1,6 @@
 App.<%= @controller_name.camelize %>.Index.Item = class Item extends Spine.Controller
 
   constructor: ->
-    <%= @model_name.camelize %>.bind "refresh", @addAll
     super
 
   render: ->
