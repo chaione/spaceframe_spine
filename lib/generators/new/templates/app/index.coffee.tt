@@ -20,4 +20,11 @@ $ ->
 
   app.main.render()
 
+  Spine.Route.setup 
+    history: true
+
+  $('body').on "click", "a.navigable", (e) ->
+    app.main.navigate(e.currentTarget.pathname)
+    e.preventDefault()
+
 window.app = app

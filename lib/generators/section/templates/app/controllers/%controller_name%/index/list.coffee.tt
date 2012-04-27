@@ -2,6 +2,8 @@ App.<%= @controller_name.camelize %>.Index.List = class List extends Spine.Contr
 
   constructor: ->
     <%= @model_name.camelize %>.bind "refresh", @addAll
+    <%= @model_name.camelize %>.bind "select", @select
+    <%= @model_name.camelize %>.bind "deselect", @deselect
     super
     @itemClass = App.<%= @controller_name.camelize %>.Index.Item
     @children = {}
@@ -17,3 +19,9 @@ App.<%= @controller_name.camelize %>.Index.List = class List extends Spine.Contr
     controller = new @itemClass(item: item)
     @children[item.id] = controller
     @append controller.render().el
+
+  select: (item) =>
+    @children[item.id].select()
+
+  deselect: (item) =>
+    @children[item.id].deselect()
