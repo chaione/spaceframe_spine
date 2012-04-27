@@ -1,0 +1,19 @@
+App.<%= @controller_name.camelize %>.Index.List = class List extends Spine.Controller
+
+  constructor: ->
+    <%= @model_name.camelize %>.bind "refresh", @addAll
+    super
+    @itemClass = App.<%= @controller_name.camelize %>.Index.Item
+    @children = {}
+
+  render: ->
+    <%= @model_name.camelize %>.fetch()
+    @
+
+  addAll: (items) =>
+    @addOne(item) for item in items
+
+  addOne: (item) ->
+    controller = new @itemClass(item: item)
+    @children[item.id] = controller
+    @append controller.render().el
