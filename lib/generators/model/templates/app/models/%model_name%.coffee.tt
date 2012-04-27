@@ -1,7 +1,6 @@
 window.<%= @model_name.camelize %> = class <%= @model_name.camelize %> extends Spine.Model
   @configure "<%= @model_name.camelize %>", <%= fields.map {|f| %Q{"#{f}"} }.join(', ') %>
   @extend Spine.Model.Ajax
-
   select: =>
     item.deselect() for item in @constructor.all() when item.selected
     @selected = true
