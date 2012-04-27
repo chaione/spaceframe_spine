@@ -1,1 +1,22 @@
-<%= "foo" %>
+App.<%= @controller_name.camelize %>.Index = {}
+
+App.<%= @controller_name.camelize %>.Index.Main = class Main extends Spine.Controller
+
+  className: "index"
+
+  elements:
+    ".list"   : "listEl"
+    ".detail" : "detailEl"
+
+  constructor: ->
+    @listClass   = App.<%= @controller_name.camelize %>.Index.List
+    @detailClass = App.<%= @controller_name.camelize %>.Index.Detail
+    super
+
+  render: ->
+    @html JST['app/views/layouts/section']()
+    @list   = new @listClass(el: @listEl).render()
+    @detail = new @detailClass(el: @detailEl).render()
+    @
+
+

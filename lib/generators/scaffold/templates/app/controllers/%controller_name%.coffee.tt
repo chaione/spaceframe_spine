@@ -1,0 +1,13 @@
+App.<%= @controller_name.camelize %> = {}
+
+App.<%= @controller_name.camelize %>.Section = class <%= @controller_name.camelize %> extends Spine.Stack
+  tag: "section"
+
+  constructor: ->
+    @controllers =
+      index: App.<%= @controller_name.camelize %>.Index.Main
+    super
+
+  render: ->
+    @index.render()
+    @

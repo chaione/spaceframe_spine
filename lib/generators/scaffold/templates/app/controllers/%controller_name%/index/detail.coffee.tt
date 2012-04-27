@@ -1,0 +1,7 @@
+App.<%= @controller_name.camelize %>.Index.Detail = class Detail extends Spine.Controller
+
+  constructor: ->
+    super
+
+  render: ->
+    @
