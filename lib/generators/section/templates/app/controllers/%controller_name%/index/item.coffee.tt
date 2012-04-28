@@ -13,10 +13,10 @@ App.<%= @controller_name.camelize %>.Index.Item = class Item extends Spine.Contr
     @
 
   select: ->
-    @$.addClass("selected")
+    @el.addClass("selected")
 
   deselect: ->
-    @$.removeClass("selected")
+    @el.removeClass("selected")
     
   clicked: =>
     @item.select()
