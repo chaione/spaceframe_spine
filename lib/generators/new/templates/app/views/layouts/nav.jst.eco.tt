@@ -1,1 +1,9 @@
-<h1><%= @app_name %></h1>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class='brand' href='/'><%= @application_name %></a>
+      <ul class="nav">
+      </ul>
+    </div>
+  </div>
+</div>

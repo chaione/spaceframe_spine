@@ -21,7 +21,8 @@ $ ->
   app.nav  = new App.Nav(el: $("#nav"), sections: app.main.sections)
 
   app.main.render()
-
+  app.nav.render()
+  
   Spine.Route.setup 
     history: true
 

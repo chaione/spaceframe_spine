@@ -13,4 +13,4 @@ App.Nav = class Nav extends Spine.Controller
     @addOne(item) for item in @sections when item.navTitle
 
   addOne: (item) ->
-    @append JST['app/views/shared/nav_item'](item)
+    @$("ul.nav").append JST['app/views/nav/nav_item'](item)

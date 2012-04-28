@@ -33,7 +33,7 @@ module SpaceFrame
           match = /\@sections = \[(.*)\]/.match(match.to_s)
           puts "match: #{match[1]}"
 
-          if match = "sections = []"
+          if match == "sections = []"
             "@sections = [@#{@controller_name}]"
           else
             sections = match[1].split(",")
