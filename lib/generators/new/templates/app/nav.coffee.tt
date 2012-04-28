@@ -1,0 +1,16 @@
+App.Nav = class Nav extends Spine.Controller
+  tag: "nav"
+
+  constructor: ->
+    super
+
+  render: ->
+    @html JST['app/views/layouts/nav']()
+    @addAll()
+    @
+
+  addAll: ->
+    @addOne(item) for item in @sections when item.navTitle
+
+  addOne: (item) ->
+    @$("ul.nav").append JST['app/views/nav/nav_item'](item)
