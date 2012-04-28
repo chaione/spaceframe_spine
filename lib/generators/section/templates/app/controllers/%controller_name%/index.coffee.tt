@@ -24,7 +24,7 @@ App.<%= @controller_name.camelize %>.Index.Main = class Main extends Spine.Contr
 
   show: (params) ->
     if item = <%= @model_name.camelize %>.exists(params.id)
-      @detail = new @detailClass(el: @detailEl).render(item)
+      @detail = new @detailClass(el: @detailEl, item: item).render(item)
     else
       <%= @model_name.camelize %>.one "refresh", =>
         @show(params)
