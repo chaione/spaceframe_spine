@@ -11,15 +11,18 @@
 #= require_tree ./controllers
 #= require_tree ./views
 #
+#= require ./nav
 #= require ./main
 
 app = {}
 
 $ ->
   app.main = new App.Main(el: $("#main"))
+  app.nav  = new App.Nav(el: $("#nav"), sections: app.main.sections)
 
   app.main.render()
-
+  app.nav.render()
+  
   Spine.Route.setup 
     history: true
 

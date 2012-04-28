@@ -2,6 +2,7 @@ App.<%= @controller_name.camelize %> = {}
 
 App.<%= @controller_name.camelize %>.Section = class <%= @controller_name.camelize %> extends Spine.Stack
   tag: "section"
+  navTitle: "<%= @controller_name.camelize %>"
 
   constructor: ->
     @controllers =
