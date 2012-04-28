@@ -25,17 +25,28 @@ module SpaceFrame
         directory "app", "app/assets/javascripts/app"
 
         insert_into_file "app/assets/javascripts/app/main.coffee",
-                         "@#{@controller_name} = new App.#{@controller_name.camelize}.Section()",
+                         "    @#{@controller_name} = new App.#{@controller_name.camelize}.Section()",
                          :after =>"super\n"
 
         gsub_file "app/assets/javascripts/app/main.coffee", /\@sections = \[(.*)\]/ do |match|
-          puts "match is #{match[1]}"
-          sections = match[1].split(",")
-          sections << "@#{@controller_name}" unless sections.include?("@#{@controller_name}")
-          "@sections = [#{sections.join(',')}]"
+          puts match.to_s
+          match = /\@sections = \[(.*)\]/.match(match.to_s)
+          puts "match: #{match[1]}"
+
+          if match = "sections = []"
+            "@sections = [@#{@controller_name}]"
+          else
+            sections = match[1].split(",")
+            sections << "@#{@controller_name}" unless sections.include?("@#{@controller_name}")
+            "@sections = [#{sections.join(',')}]"
+          end
         end
 
         #process other templates
+      end
+
+      def add_root_route
+        route(%Q{root :to => "#{@controller_name}#index"})
       end
 
     end
